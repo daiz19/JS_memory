@@ -1,3 +1,14 @@
+/*
+このプロジェクトで主に使用する機能
+- for loops
+- addEventListener
+- setAttribute
+- getAttribute
+- data-name
+- document.querySelector
+- createElement
+*/
+
 document.addEventListener('DOMContentLoaded',() => {
     // カードの配列を作成
     const cardArray = [
@@ -61,7 +72,7 @@ document.addEventListener('DOMContentLoaded',() => {
     let cardsChosenId = []
     let cardsWon = []
 
-    // カードを並べるファンクション
+    // カードを並べるファンクション（関数）
     function createBoard() {
         for (let i = 0; i < cardArray.length; i++) {
             const card = document.createElement('img')
@@ -71,7 +82,9 @@ document.addEventListener('DOMContentLoaded',() => {
             card.addEventListener('click',flipCard) // クリックされたらflipCardファンクションを起動
         }
     }
-    // カードをフリップするファンクション
+    createBoard()
+
+    // カードをフリップするファンクション（関数）
     function flipCard() {
         let cardId = this.getAttribute('data-id')
         cardsChosen.push(cardArray[cardId].name)
@@ -82,7 +95,7 @@ document.addEventListener('DOMContentLoaded',() => {
         }
     }
 
-    // カードが揃ったかチェックするファンクション
+    // カードが揃ったかチェックするファンクション（関数）
     function checkForMatch() {
         const cards = document.querySelectorAll('img')
         const optionOneId = cardsChosenId[0]
@@ -122,7 +135,5 @@ document.addEventListener('DOMContentLoaded',() => {
             resultDisplay.textContent = 'Congrats! You found them all!'
         }
     }
-
-    createBoard()
 })
 

@@ -1,3 +1,14 @@
+/*
+このプロジェクトで主に使用する機能
+- for loops
+- addEventListener
+- setAttribute
+- getAttribute
+- data-name
+- document.querySelector
+- createElement
+*/
+
 document.addEventListener('DOMContentLoaded',() => {
     // カードの配列を作成
     const cardArray = [
